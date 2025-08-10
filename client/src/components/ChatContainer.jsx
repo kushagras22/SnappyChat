@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { messagesDummyData } from '../lib/assets'
+import arjun from '../assets/arjun_sharma.jpeg';
+import priya from '../assets/priya_verma.jpg';
+import arrowIcon from '../assets/arrow_icon.png';
+import helpIcon from '../assets/help_icon.png';
+import galleryIcon from '../assets/gallery_icon.svg';
+import sendButton from '../assets/send_button.png';
 import formatMessageTime from '../lib/utils';
 
 const ChatContainer = ({selectedUser, setSelectedUser}) => {
@@ -16,13 +22,13 @@ const ChatContainer = ({selectedUser, setSelectedUser}) => {
     <div className='h-full overflow-scroll relative backdrop-blur-lg'>
         {/* Header */}
         <div className='flex items-center gap-3 py-3 mx-4 border-b border-stone-500'>
-            <img src="./src/assets/arjun_sharma.jpeg" alt="Arjun Sharma" className='w-8 rounded-full'/>
+            <img src={arjun} alt="Arjun Sharma" className='w-8 rounded-full'/>
             <p className='flex-1 text-lg text-white flex items-center gap-2'>
                 Arjun Sharma
                 <span className='w-2 h-2 rounded-full bg-green-500 mt-1'></span>
             </p>
-            <img onClick={() => {setSelectedUser(null)}} src="./src/assets/arrow_icon.png" alt="Arrow Icon"  className='md:hidden max-w-7'/>
-            <img src="./src/assets/help_icon.png" alt="Help Icon" className='max-w-5'/>
+            <img onClick={() => {setSelectedUser(null)}} src={arrowIcon} alt="Arrow Icon"  className='md:hidden max-w-7'/>
+            <img src={helpIcon} alt="Help Icon" className='max-w-5'/>
         </div>
 
         {/* Chat Section */}
@@ -36,7 +42,7 @@ const ChatContainer = ({selectedUser, setSelectedUser}) => {
                     )}
 
                     <div className='text-center text-xs'>
-                        <img src={message.senderId === 'ind002' ? './src/assets/priya_verma.jpg' : './src/assets/arjun_sharma.jpeg'} alt="" className='w-7 rounded-full'/>
+                        <img src={message.senderId === 'ind002' ? priya : arjun} alt="" className='w-7 rounded-full'/>
                         <p className='text-gray-500'>{formatMessageTime(message.createdAt)}</p>
                     </div>
                 </div>
@@ -51,15 +57,15 @@ const ChatContainer = ({selectedUser, setSelectedUser}) => {
                 />
                 <input type="file" id='image' accept='image/png, image/jpeg, image/jpg' hidden/>
                 <label htmlFor="image">
-                    <img src="./src/assets/gallery_icon.svg" alt="Gallery" className='w-5 mr-2 cursor-pointer'/>
+                    <img src={galleryIcon} alt="Gallery" className='w-5 mr-2 cursor-pointer'/>
                 </label>
             </div>
-            <img src="./src/assets/send_button.png" alt="Send Button" className='w-7 cursor-pointer'/>
+            <img src={sendButton} alt="Send Button" className='w-7 cursor-pointer'/>
         </div>
     </div>
   ) : (
     <div className='flex flex-col items-center justify-center gap-2 text-gray-500  max-md:hidden'>
-        <img src="./logo.png" alt="Logo" className='max-w-16' />
+        <img src="/logo.png" alt="Logo" className='max-w-16' />
         <p className='text-2xl font-medium text-white mt-2'>SnappyChat</p>
         <p className='text-[16px] font-medium text-white mt-2 tracking-wide'>From quick chats to big decisions, we got you covered</p>
     </div>

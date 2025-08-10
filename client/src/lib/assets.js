@@ -1,45 +1,62 @@
-import pc1 from "./src/assets/pc1.jpg";
-import pc2 from "./src/assets/pc2.jpg";
-import pc3 from "./src/assets/pc3.jpg";
-import pc4 from "./src/assets/pc4.jpg";
-import pc5 from "./src/assets/pc5.jpg";
 
-export const imagesDummyData = [pc1, pc2, pc3, pc4, pc5];
+export const imagesDummyData = [
+  "https://images.unsplash.com/photo-1754638069174-7aa06c176b61?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/flagged/photo-1563693703591-ef3a7e5d70d9?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1752861680950-95de10209572?q=80&w=1069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1754648915228-994a9c6dca51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1754436412955-e2aae088a979?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1743397015920-e4682a813b24?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1744690176524-62580857164d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+];
+
+
+import arjun_sharma from "../assets/arjun_sharma.jpeg";
+import priya_verma from "../assets/priya_verma.jpg";
+import rahul_verma from "../assets/rahul_verma.avif";
+import profile_ananya from "../assets/profile_ananya.jpg";
+import profile_vikram from "../assets/profile_vikram.jpg";
+import menu_icon from "../assets/menu_icon.png";
+import user_fallback from "../assets/user.png";
+import logo from "../assets/snappyLogo.png";
+import arrowIcon from "../assets/arrow_icon.png";
+import logoIcon from "/logo.png";
+
+export { logo, arrowIcon, user_fallback, logoIcon };
 
 export const userDummyData = [
     {
         "_id": "ind001",
         "email": "arjun.sharma@example.in",
         "fullName": "Arjun Sharma",
-        "profilePic": "./src/assets/arjun_sharma.jpeg",
+        "profilePic": arjun_sharma,
         "bio": "Namaste! Using SnappyChat from Delhi.",
     },
     {
         "_id": "ind002",
         "email": "priya.verma@example.in",
         "fullName": "Priya Verma",
-        "profilePic": "./src/assets/priya_verma.jpg",
+        "profilePic": priya_verma,
         "bio": "Hello! SnappyChat is awesome. Greetings from Mumbai.",
     },
     {
         "_id": "ind003",
         "email": "rahul.patel@example.in",
         "fullName": "Rahul Patel",
-        "profilePic": "./src/assets/rahul_verma.avif",
+        "profilePic": rahul_verma,
         "bio": "Hi! Enjoying SnappyChat in Ahmedabad.",
     },
     {
         "_id": "ind004",
         "email": "ananya.iyer@example.in",
         "fullName": "Ananya Iyer",
-        "profilePic": "./src/assets/profile_ananya.jpg",
+        "profilePic": profile_ananya,
         "bio": "Vanakkam! Chatting from Chennai.",
     },
     {
         "_id": "ind005",
         "email": "vikram.singh@example.in",
         "fullName": "Vikram Singh",
-        "profilePic": "./src/assets/profile_vikram.jpg",
+        "profilePic": profile_vikram,
         "bio": "Sat Sri Akal! Using SnappyChat from Amritsar.",
     }
 ]
@@ -81,7 +98,7 @@ export const messagesDummyData = [
         "_id": "msg005",
         "senderId": "ind002",
         "receiverId": "ind001",
-        "image": "./src/assets/menu_icon.png",
+        "image": menu_icon,
         "seen": true,
         "createdAt": "2025-04-28T10:23:56.265Z",
     },
@@ -89,7 +106,7 @@ export const messagesDummyData = [
         "_id": "msg006",
         "senderId": "ind001",
         "receiverId": "ind002",
-        "image": "src/assets/menu_icon.png",
+        "image": menu_icon,
         "seen": true,
         "createdAt": "2025-04-28T10:24:05.164Z",
     },
@@ -102,3 +119,5 @@ export const messagesDummyData = [
         "createdAt": "2025-04-28T10:24:08.523Z",
     }
 ]
+
+export const fallbackUserIcon = user_fallback;
