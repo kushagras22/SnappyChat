@@ -125,7 +125,7 @@ npm run dev
 ## Live Project
 
 Access the live deployed version here:  
-**[SnappyChat Live](https://your-live-project-link.vercel.app/)**
+**[SnappyChat Live](https://snappy-chat-chi.vercel.app/)**
 
 ---
 
