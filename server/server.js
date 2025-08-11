@@ -10,7 +10,7 @@ import { Server } from "socket.io";
 await connectDB();
 const app = express();
 const server = http.createServer(app);
-const PORT = process.env.PORT || 5000;
+
 
 export const io = new Server(server, {
     cors: {origin: "*"}
@@ -41,6 +41,11 @@ app.use("/api/status", (req, res) => res.send("Server is live!"));
 app.use("/api/auth", userRouter);
 app.use("/api/messages", messageRouter);
 
-server.listen(PORT, () => {
-    console.log(`Server started running on port ${PORT}`);
-})
+if(process.env.NODE_ENV !== "production"){
+    const PORT = process.env.PORT || 5000;
+        server.listen(PORT, () => {
+        console.log(`Server started running on port ${PORT}`);
+    })
+}
+
+export default server;
