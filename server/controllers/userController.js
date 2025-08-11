@@ -40,7 +40,7 @@ export const signUp = async(req, res) => {
         console.log("Something went wrong:", error.message);
         res.json({
             success: false,
-            message: "Failed to create user:" + error.message 
+            message: error.message 
         })
     }
 }
@@ -69,7 +69,7 @@ export const login = async(req, res) => {
         console.log("Login failed!");
         res.json({
             success: false,
-            message: "Failed to login:" + error.message
+            message: error.message
         })
     }
 }
@@ -88,7 +88,7 @@ export const updateProfile = async(req, res) => {
 
         let updatedUser;
         if(!profilePic){
-            await User.findByIdAndUpdate(userId, {bio, fullName}, {new: true});
+            updatedUser = await User.findByIdAndUpdate(userId, {bio, fullName}, {new: true});
         } else {
             const upload = await cloudinary.uploader.upload(profilePic);
 

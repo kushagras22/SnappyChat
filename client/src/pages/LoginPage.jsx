@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
-import {arrowIcon} from '../lib/assets'
+import React, { useContext, useState } from 'react'
+import {arrowIcon} from '../lib/assets';
+import AuthContext from '../../context/AuthContextProvider';
+
+
 
 const LoginPage = () => {
   const [currentState, setCurrentState] = useState("Sign Up");
@@ -9,6 +12,8 @@ const LoginPage = () => {
   const [bio, setBio] = useState("");
   const [isDataSubmitted, setIsDataSubmitted] = useState(false);
 
+  const {login} = useContext(AuthContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -16,6 +21,8 @@ const LoginPage = () => {
       setIsDataSubmitted(true);
       return;
     }
+
+    login(currentState === "Sign Up" ? 'signup' : 'login', {fullName, email, password, bio});
   }
 
   return (
